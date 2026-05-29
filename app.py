@@ -57,13 +57,13 @@ def analyze_resume(text):
         if found_skills:
             skills[category] = found_skills
 
-    # Resume rating
+    # Resume rating - FIXED: Removed quotation marks around the final condition
     rating = sum([
         len(text) > 500,
         "experience" in text.lower(),
         "education" in text.lower(),
         "skills" in text.lower(),
-        "len(skills) > 3"
+        len(skills) > 3
     ])
 
     # Mistakes
